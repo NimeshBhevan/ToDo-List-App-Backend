@@ -23,16 +23,17 @@ app.use(`/api/todo`, ToDoRoutes);
 
 // used mongoose to connect to MongoDB database. 
 mongoose
-  .connect(process.env.Connection_String, { dbName: "todo-list-app" })
-  .then(() => {
-    console.log("Connected to the database");
-  })
-  .catch((error) => {
-    console.log("Error connecting to database", error);
-  });
+	.connect(process.env.CONNECTION_STRING, { dbName: "todo-list-app" })
+	.then(() => {
+		console.log("Connected to the database");
+	})
+	.catch((error) => {
+		console.log("Error connecting to database", error);
+	});
 
 
 // running the server at port 3000
-app.listen(3000, () => {
-  console.log(`Server is running at http://localhost:3000`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running at ${PORT}`);
 });
