@@ -18,6 +18,6 @@ todoSchema.set("toJSON", {
 	virtuals: true,
 });
 
-// export the model as User
+// export the model as ToDo
 const ToDo = mongoose.model("ToDo", todoSchema);
 module.exports = ToDo;
